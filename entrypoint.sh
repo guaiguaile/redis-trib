@@ -2,7 +2,7 @@
 
 AUTH_PASSWORD=${AUTH_PASSWORD}
 
-if [ -z $au ];then 
+if [ -z ${AUTH_PASSWORD} ];then 
   echo "If redis has authentication enabled, set it AUTH_PASSWORD"
 else
   sed -i "s/:password => nil/:password => \"${AUTH_PASSWORD}\"/g" /usr/lib/ruby/gems/2.5.0/gems/redis-4.0.2/lib/redis/client.rb
