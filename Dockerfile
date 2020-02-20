@@ -1,5 +1,5 @@
 FROM alpine:latest
-
+COPY entrypoint.sh /
 RUN apk add --no-cache \
   ca-certificates \
   ruby \
