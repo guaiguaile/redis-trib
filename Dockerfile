@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM alpine:3.8.1
 
 ENV redis_version 4.0.2
 
