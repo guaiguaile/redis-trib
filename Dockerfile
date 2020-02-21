@@ -1,5 +1,9 @@
 FROM alpine:latest
+
+ENV redis_version 4.0.2
+
 COPY entrypoint.sh /
+
 RUN apk add --no-cache \
   ca-certificates \
   ruby \
@@ -7,10 +11,9 @@ RUN apk add --no-cache \
   ruby-dev \
   ruby-rdoc \
   ruby-irb \
-  && gem install redis \
+  && gem install redis -v ${redis_version} \
   && rm -rf /var/cache/apk/* \
   && rm -rf /var/lib/apt/lists/*
-
 
 RUN wget http://download.redis.io/redis-stable/src/redis-trib.rb && \
     sed -i 's@yes_or_die "Can I set the above configuration?"@#yes_or_die "Can I set the above configuration?"@g' redis-trib.rb && \
