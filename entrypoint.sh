@@ -8,4 +8,4 @@ else
   sed -i "s/:password => nil/:password => \"${AUTH_PASSWORD}\"/g" ${CLIENT_PATH}
 fi
 
-exec "/usr/bin/redis-trib $@"
+exec "/usr/bin/redis-trib"
