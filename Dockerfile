@@ -15,7 +15,7 @@ RUN apk add --no-cache \
   && rm -rf /var/cache/apk/* \
   && rm -rf /var/lib/apt/lists/*
 
-RUN wget https://raw.githubusercontent.com/antirez/redis/4.0/src/redis-trib.rb && \
+RUN wget https://raw.githubusercontent.com/guaiguaile/redis/4.0/src/redis-trib.rb && \
     sed -i 's@yes_or_die "Can I set the above configuration?"@#yes_or_die "Can I set the above configuration?"@g' redis-trib.rb && \
     mv redis-trib.rb /usr/bin/redis-trib && \
     chmod 755 /usr/bin/redis-trib /entrypoint.sh
