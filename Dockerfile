@@ -20,4 +20,4 @@ RUN wget https://raw.githubusercontent.com/guaiguaile/redis/4.0/src/redis-trib.r
     mv redis-trib.rb /usr/bin/redis-trib && \
     chmod 755 /usr/bin/redis-trib /entrypoint.sh
 
-ENTRYPOINT ["/entrypoint.sh $@"]
+ENTRYPOINT ["/entrypoint.sh"]
